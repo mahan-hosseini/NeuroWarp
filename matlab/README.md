@@ -36,6 +36,7 @@ Peform a **DTW based bootstrap analysis** to assess the **temporal correlation b
 
 ## DTW Latency Difference - dtw_latency_difference.m
 Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).
+
 *Figures 3 & 4 of our paper show a two conditions analysis*
 - Reference and query time series must be 2D matrices
 	- I.e., data points (e.g., time) x subjects (i.e., replications)
@@ -59,4 +60,6 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 11.	dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, filepath, permutations)
 
 ## Tests
-Matlab NeuroDTW was tested with Matlab 2020b & 2023b on Windows. On a M1 Macbook the run_DTW local function caused crashes for my machine. If you have any insight on this please let me know. The rest worked as expected.
+Matlab NeuroDTW was tested with Matlab 2020b & 2023b on Windows. 
+
+On a M1 Macbook the run_DTW local function caused crashes for my machine. If you have any insight on this please let me know. The rest worked as expected.
