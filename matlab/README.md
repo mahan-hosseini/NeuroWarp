@@ -32,7 +32,7 @@ Peform a **DTW based bootstrap analysis** to assess the **temporal correlation b
 	- Exclude outliers if their DTW area is +-5 standard deviations from the mean
 9.	try_to_fix_ylims = 1
 	- Attempt to standardise y-limits of marginals
-10.	dtw_timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)
+10.	`dtw_timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)`
 
 *Note that the figure will look slightly different to that of our paper due to different x/y limits. See the replicate_figures folder if you want to replicate our figure as it was printed.*
 
@@ -60,7 +60,7 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 9.	filepath = cd (or wherever else you have saved our data)
 10.	permutations = 10000
 	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
-11.	dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, filepath, permutations)
+11.	`dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, filepath, permutations)`
 
 ## Tests
 Matlab NeuroDTW was tested with Matlab 2020b & 2023b on Windows. 

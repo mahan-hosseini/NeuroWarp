@@ -1,4 +1,4 @@
-# Matlab NeuroDTW - Replicating our Figures
+# Matlab NeuroDTW - Replicating our Paper
 
 ## Dependencies
 *Matlab NeuroDTW requires the following toolboxes to be installed and available in your Matlab path:*
