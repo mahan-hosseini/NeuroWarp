@@ -64,4 +64,4 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 ## Tests
 Matlab NeuroDTW was tested with Matlab 2020b & 2023b on Windows. 
 
-On a M1 Macbook the run_DTW local function caused crashes for my machine. If you have any insight on this or are able to run it on (e.g. a non-ARM) another mac please let me know. The rest worked as expected.
+On a M1 Macbook the run_DTW local function caused crashes for my machine. If you have any insight on this or are able to run it on (e.g. a non-ARM) another mac please let me know (m.hosseini@fz-juelich.de). The rest worked as expected.
