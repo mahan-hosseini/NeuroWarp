@@ -4,6 +4,7 @@ Matlab NeuroDTW consists of two main scripts, dtw_timeseries_correlation.m and d
 The scripts used to replicate our analyses and figures as presented in our paper can be found in the *replicating_paper* folder.
 
 ## Dependencies
+*Matlab NeuroDTW requires the following toolboxes to be installed and available in your Matlab path:*
 - Matlab’s Statistics & Machine Learning Toolbox
 - Matlab’s Signal Processing Toolbox
 - [Hline & vline](https://de.mathworks.com/matlabcentral/fileexchange/1039-hline-and-vline )

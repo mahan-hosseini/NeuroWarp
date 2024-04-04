@@ -1,6 +1,7 @@
 # Matlab NeuroDTW - Replicating our Figures
 
 ## Dependencies
+*Matlab NeuroDTW requires the following toolboxes to be installed and available in your Matlab path:*
 - Matlab’s Statistics & Machine Learning Toolbox
 - Matlab’s Signal Processing Toolbox
 - [Hline & vline](https://de.mathworks.com/matlabcentral/fileexchange/1039-hline-and-vline )
