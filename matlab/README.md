@@ -11,8 +11,8 @@ The scripts used to replicate our analyses and figures as presented in our paper
 - [Suplabel](https://de.mathworks.com/matlabcentral/fileexchange/7772-suplabel )
 - [nhist](https://de.mathworks.com/matlabcentral/fileexchange/27388-plot-and-compare-histograms-pretty-by-default)
 
-## DTW temporal correlation - dtw_timeseries_correlation.m
-Peform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper)
+## DTW Temporal Correlation - dtw_timeseries_correlation.m
+Peform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper).
 - Time series must be 2D matrices
 	- I.e., data points (e.g. time) x subjects (i.e., replications)
 - We provide the ERPs of correct and intrusion trials for users to explore this function
@@ -30,7 +30,31 @@ Peform a **DTW based bootstrap analysis** to assess the **temporal correlation b
 9.	try_to_fix_ylims = 1
 	- Attempt to standardise y-limits of marginals
 10.	dtw_timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)
+
 *Note that the figure will look slightly different to that of our paper due to different x/y limits. See the replicate_figures folder if you want to replicate our figure as it was printed.*
+
+# DTW Latency Difference - dtw_latency_difference.m
+Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).
+*Figures 3 & 4 of our paper show a two conditions analysis*
+- Reference and query time series must be 2D matrices
+	- I.e., data points (e.g., time) x subjects (i.e., replications)
+	- Time series have to be of equal sizes
+- analysis_design determines whether you want to assess a within- or between-subjects latency effect (can only take “within” or “between” as input)
+- We provide the ERPs of correct and intrusion trials for users to explore this function
+- To run this script using our ERPs (you should be able enter the following into MATLAB’s command window if your current directory (cd) corresponds to where you have saved our data:
+1.	load('example_series_N2pcP3s.mat')
+2.	analysis_design = “within”;
+3.	query = N2pc_Intrusion;
+4.	reference = N2pc_Correct;
+5.	name_query = "Intrusion"
+6.	name_reference = "Correct"; 
+7.	units = "\muV"
+8.	sampling_rate = 500;
+	- The number of data points per second in Hertz
+9.	filepath = cd (or wherever else you have saved our data)
+10.	permutations = 10000
+	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
+11.	dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, filepath, permutations)
 
 ## Tests
 Matlab NeuroDTW was tested with Matlab 2020b & 2023b on Windows. On a M1 Macbook the run_DTW local function caused crashes for my machine. If you have any insight on this please let me know. The rest worked as expected.
