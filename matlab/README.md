@@ -19,7 +19,7 @@ Peform a **DTW based bootstrap analysis** to assess the **temporal correlation b
 - We provide the ERPs of correct and intrusion trials for users to explore this function
 
 ### Running dtw_timeseries_correlation.m using our ERPs:
-*You should be able enter the following into MATLAB’s command window if your current directory (cd) corresponds to where you have saved our data*
+*Enter the following into MATLAB’s command window making sure your current directory (cd) corresponds to where you have saved our data*
 1.	load("example_series_N2pcP3s.mat")
 2.	series_1 = P3_Correct
 3.	series_2 = N2pc_Correct
@@ -47,7 +47,7 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 - We provide the ERPs of correct and intrusion trials for users to explore this function
 
 ### Running dtw_latency_difference.m using our ERPs:
-*You should be able enter the following into MATLAB’s command window if your current directory (cd) corresponds to where you have saved our data*
+*Enter the following into MATLAB’s command window making sure your current directory (cd) corresponds to where you have saved our data*
 1.	load("example_series_N2pcP3s.mat")
 2.	analysis_design = “within”
 3.	query = N2pc_Intrusion
