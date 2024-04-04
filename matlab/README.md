@@ -12,8 +12,10 @@ The scripts used to replicate our analyses and figures as presented in our paper
 - [nhist](https://de.mathworks.com/matlabcentral/fileexchange/27388-plot-and-compare-histograms-pretty-by-default)
 
 ## dtw_timeseries_correlation.m
-Peform a **DTW based bootstrap analysis** to assess the ==temporal correlation between two time series== (Figure 5 of our paper)
-Time
+- Peform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper)
+- Time series must be 2D matrices
+	- I.e., data points (e.g. time) x subjects (i.e., replications)
+
 
 ## Tests
 Matlab NeuroDTW was tested with Matlab 2020b & 2023b on Windows. On a M1 Macbook the run_DTW local function caused crashes for my machine. If you have any insight on this please let me know. The rest worked as expected.
