@@ -13,7 +13,7 @@ The scripts used to replicate our analyses and figures as presented in our paper
 - [nhist](https://de.mathworks.com/matlabcentral/fileexchange/27388-plot-and-compare-histograms-pretty-by-default)
 
 ## DTW Temporal Correlation - dtw_timeseries_correlation.m
-Peform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper).
+Perform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper).
 - Time series must be 2D matrices
 	- I.e., data points (e.g. time) x subjects (i.e., replications)
 - We provide the ERPs of correct and intrusion trials for users to explore this function

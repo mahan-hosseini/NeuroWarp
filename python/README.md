@@ -15,12 +15,17 @@ We recommend that you create a new virtual environment for our module via:
 
 3. Install neurodtw via pip (enter while neurodtw_env is active):
 `pip install neurodtw`
-4. The functions can be used as explained below after importing the module via (while neurodtw_env is active):
-`python`
-
-`import neurodtw`
+4. The functions can be used as explained below after importing the module
 
 For more detail on virtual environments & pip [click here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
+
+
+## DTW Temporal Correlation - neurodtw.timeseries_correlation()
+Peform a DTW based bootstrap analysis to assess the temporal correlation between two time series (Figure 5 of our paper).
+
+Time series must be 2D matrices
+I.e., data points (e.g. time) x subjects (i.e., replications)
+We provide the ERPs of correct and intrusion trials for users to explore this function
 
 ## Dependencies
 *Python NeuroDTW requires the following toolboxes which are automatically installed via `pip install neurodtw`*
