@@ -22,7 +22,7 @@ We recommend that you create a new virtual environment for our module via:
 For more detail on virtual environments & pip [click here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
 
 ## Dependencies
-*Python NeuroDTW requires the following toolboxes which are automatically installed via ˙pip install neurodtw˙*
+*Python NeuroDTW requires the following toolboxes which are automatically installed via `pip install neurodtw`*
 - Numpy
 - Matplotlib
 - Tslearn
