@@ -20,17 +20,17 @@ Perform a **DTW based bootstrap analysis** to assess the **temporal correlation 
 
 ### Running dtw_timeseries_correlation.m using our ERPs:
 *Enter the following into MATLAB’s command window making sure your current directory (cd) corresponds to where you have saved our data*
-1.	load("example_series_N2pcP3s.mat")
-2.	series_1 = P3_Correct
-3.	series_2 = N2pc_Correct
-4.	name_1 = “P3”
-5.	name_2 = “N2pc”
-6.	savepath = cd (or wherever else you have saved our data)
-7.	num_boots = 10000
+1.	`load("example_series_N2pcP3s.mat")`
+2.	`series_1 = P3_Correct`
+3.	`series_2 = N2pc_Correct`
+4.	`name_1 = “P3”`
+5.	`name_2 = “N2pc”`
+6.	`savepath = cd` (or wherever else you have saved our data)
+7.	`num_boots = 10000`
 	- The number of bootstrap samples that you want to implement
-8.	outlier = 0
+8.	`outlier = 0`
 	- Exclude outliers if their DTW area is +-5 standard deviations from the mean
-9.	try_to_fix_ylims = 1
+9.	`try_to_fix_ylims = 1`
 	- Attempt to standardise y-limits of marginals
 10.	`dtw_timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)`
 
@@ -48,17 +48,17 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 
 ### Running dtw_latency_difference.m using our ERPs:
 *Enter the following into MATLAB’s command window making sure your current directory (cd) corresponds to where you have saved our data*
-1.	load("example_series_N2pcP3s.mat")
-2.	analysis_design = “within”
-3.	query = N2pc_Intrusion
-4.	reference = N2pc_Correct
-5.	name_query = "Intrusion"
-6.	name_reference = "Correct"
-7.	units = "\muV"
-8.	sampling_rate = 500
+1.	`load("example_series_N2pcP3s.mat")`
+2.	`analysis_design = “within”`
+3.	`query = N2pc_Intrusion`
+4.	`reference = N2pc_Correct`
+5.	`name_query = "Intrusion"`
+6.	`name_reference = "Correct"`
+7.	`units = "\muV"`
+8.	`sampling_rate = 500`
 	- The number of data points per second in Hertz
-9.	filepath = cd (or wherever else you have saved our data)
-10.	permutations = 10000
+9.	`filepath = cd (or wherever else you have saved our data)
+10.	`permutations = 10000`
 	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
 11.	`dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, filepath, permutations)`
 

@@ -28,23 +28,21 @@ Perform a DTW based bootstrap analysis to assess the temporal correlation betwee
 
 ### Running timeseries_correlation using our ERPs
 *Enter the following into Python and make sure to enter your actual paths!*
-1. Run Python, import the neurodtw package and load our ERPs
-
-	`import neurodtw`	
-	`from scipy.io import loadmat`
-	`data = loadmat("your/path/to/example_series_N2pcP3s")`
-2. `series_1 = data["P3_Correct"]`
-3. `series_2 = data["P3_Intrusion"]`
-4. `name_1 = "Correct"`
-5. `name_2 = "Intrusion"`
-6. `savepath = "where/to/store/results/to"`
-7. `num_boots = 10000`
+1. `import neurodtw`	
+2. `from scipy.io import loadmat`
+3. `data = loadmat("your/path/to/example_series_N2pcP3s")`
+4. `series_1 = data["P3_Correct"]`
+5. `series_2 = data["P3_Intrusion"]`
+6. `name_1 = "Correct"`
+7. `name_2 = "Intrusion"`
+8. `savepath = "where/to/store/results/to"`
+9. `num_boots = 10000`
 	- The number of bootstrap samples that you want to implement
-8. `outlier = 0`
+10. `outlier = 0`
 	- Exclude outliers if their DTW area is +-5 standard deviations from the mean
-9. `try_to_fix_ylims = 1`
+11. `try_to_fix_ylims = 1`
 	- Attempt to standardise y-limits of marginals
-10. `neurodtw.timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)`
+12. `neurodtw.timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)`
 
 ## DTW Latency Difference - neurodtw.latency_difference()
 Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).
@@ -58,23 +56,22 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 
 ### Running timeseries_correlation using our ERPs
 *Enter the following into Python and make sure to enter your actual paths!*
-1. Run Python, import the neurodtw package and load our ERPs
-`import neurodtw`	
-`from scipy.io import loadmat`
-`data = loadmat("your/path/to/example_series_N2pcP3s")`
-2. `analysis_design = "within"`
-3. `query = data["N2pc_Intrusion"]`
-4. `reference = data["N2pc_Correct"]`
-5. `name_query = "Intrusion"`
-6. `name_reference = "Correct"`
-7. `units = "\u03BCV"`
+1. `import neurodtw`	
+2. `from scipy.io import loadmat`
+3. `data = loadmat("your/path/to/example_series_N2pcP3s")`
+4. `analysis_design = "within"`
+5. `query = data["N2pc_Intrusion"]`
+6. `reference = data["N2pc_Correct"]`
+7. `name_query = "Intrusion"`
+8. `name_reference = "Correct"`
+9. `units = "\u03BCV"`
 	- The units that your signals are measured in (in our case micro volts)
-8. `sampling_rate = 500`
+10. `sampling_rate = 500`
 	- The number of data points per second in Hertz
-9. `filepath = "where/to/store/results/to"`
-10. `permutations = 10000`
+11. `filepath = "where/to/store/results/to"`
+12. `permutations = 10000`
 	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
-11. `neurodtw.latency_difference(analysis_design, query, reference, name_query, name_reference,units, sampling_rate, filepath, permutations)`
+13. `neurodtw.latency_difference(analysis_design, query, reference, name_query, name_reference,units, sampling_rate, filepath, permutations)`
 
 ## Dependencies
 *Python NeuroDTW requires the following toolboxes which are automatically installed via `pip install neurodtw`*
