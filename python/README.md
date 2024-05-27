@@ -15,14 +15,14 @@ We recommend that you create a new virtual environment for our module via:
 
 3. Install neurodtw via pip (enter while neurodtw_env is active):
 `pip install neurodtw`
-4. The functions can be used as explained below after importing the module via (again (enter while neurodtw_env is active):
+4. The functions can be used as explained below after importing the module via (while neurodtw_env is active):
 ˚python˚
 ˚import neurodtw˚
 
 For more detail on virtual environments & pip [click here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
 
 ## Dependencies
-*Python NeuroDTW requires the following toolboxes which are automatically installed via ˚pip install neurodtw˚*
+*Python NeuroDTW requires the following toolboxes which are automatically installed via ˚pip install neurodtw˚
 - Numpy
 - Matplotlib
 - Tslearn
