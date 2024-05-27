@@ -46,16 +46,14 @@ Perform a DTW based bootstrap analysis to assess the temporal correlation betwee
 10. `neurodtw.timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)`
 
 ## DTW Latency Difference - neurodtw.latency_difference()
-Assess the latency difference between two conditions (i.e., within-subject effect) or between two groups (i.e., across-subject) effect of any signal of interest (in milliseconds).
+Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).
 
-Figures 3 & 4 of our paper show a two conditions analysis
-
-Reference and query time series must be 2D matrices
-I.e., data points (e.g., time) x subjects (i.e., replications)
-Time series have to be of equal sizes
-analysis_design determines whether you want to assess a within- or between-subjects latency effect (can only take “within” or “between” as input)
-We provide the ERPs of correct and intrusion trials for users to explore this function
-
+*Figures 3 & 4 of our paper show a two conditions analysis*
+- Reference and query time series must be 2D matrices
+	- I.e., data points (e.g., time) x subjects (i.e., replications)
+	- Time series have to be of equal sizes
+- analysis_design determines whether you want to assess a within- or between-subjects latency effect (can only take “within” or “between” as input)
+- We provide the ERPs of correct and intrusion trials for users to explore this function
 
 ### Running timeseries_correlation using our ERPs
 *Enter the following into Python and make sure to enter your actual paths!*
@@ -75,9 +73,7 @@ We provide the ERPs of correct and intrusion trials for users to explore this fu
 9. `filepath = "where/to/store/results/to"`
 10. `permutations = 10000`
 	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
-
-**Call Function**
-`neurodtw.latency_difference(analysis_design, query, reference, name_query, name_reference,units, sampling_rate, filepath, permutations)`
+11. `neurodtw.latency_difference(analysis_design, query, reference, name_query, name_reference,units, sampling_rate, filepath, permutations)`
 
 ## Dependencies
 *Python NeuroDTW requires the following toolboxes which are automatically installed via `pip install neurodtw`*
@@ -85,3 +81,6 @@ We provide the ERPs of correct and intrusion trials for users to explore this fu
 - Matplotlib
 - Tslearn
 - Scipy
+
+## Tests
+Python NeuroDTW was tested with Python 3.10.9.
