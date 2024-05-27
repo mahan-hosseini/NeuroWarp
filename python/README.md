@@ -22,18 +22,16 @@ For more detail on virtual environments & pip [click here](https://packaging.pyt
 
 ## DTW Temporal Correlation - neurodtw.timeseries_correlation()
 Perform a DTW based bootstrap analysis to assess the temporal correlation between two time series (Figure 5 of our paper).
+- Time series must be 2D matrices
+	- I.e., data points (e.g. time) x subjects (i.e., replications)
+- We provide the ERPs of correct and intrusion trials for users to explore this function
 
-Time series must be 2D matrices
-I.e., data points (e.g. time) x subjects (i.e., replications)
-We provide the ERPs of correct and intrusion trials for users to explore this function
-
-
-**Running timeseries_correlation using our ERPs**
-__Make sure to enter your actual paths!__
+### Running timeseries_correlation using our ERPs
+*Make sure to enter your actual paths!*
 1. Run Python, import the neurodtw package and load our ERPs
-`import neurodtw`	
-`from scipy.io import loadmat`
-`data = loadmat("your/path/to/example_series_N2pcP3s")`
+	`import neurodtw	
+	from scipy.io import loadmat
+	data = loadmat("your/path/to/example_series_N2pcP3s")`
 
 **Configure Variables**
 2. series_1 = data["P3_Correct"]
@@ -93,5 +91,3 @@ __Make sure to enter your actual paths!__
 - Matplotlib
 - Tslearn
 - Scipy
-
-## Tutorials & Walkthroughs (similar to those provided for Matlab NeuroDTW) will be provided after uploading Python NeuroDTW to pip
