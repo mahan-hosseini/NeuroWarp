@@ -9,9 +9,10 @@ We recommend that you create a new virtual environment for our module via:
 `python -m venv neurodtw_env`
 2. Activate the neurodtw_env via:
 
-**Windows:** `path\to\neurodtw_env\Scripts\activate`
+	**Windows:** `path\to\neurodtw_env\Scripts\activate`
 
-**MacOS:** `source neurodtw_env/bin/activate`
+	**MacOS:** `source neurodtw_env/bin/activate`
+
 3. Install neurodtw via pip (enter while neurodtw_env is active):
 `pip install neurodtw`
 4. The functions can be used as explained below after importing the module via (again (enter while neurodtw_env is active):
