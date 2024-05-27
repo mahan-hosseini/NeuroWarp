@@ -29,6 +29,7 @@ Perform a DTW based bootstrap analysis to assess the temporal correlation betwee
 ### Running timeseries_correlation using our ERPs
 *Enter the following into Python and make sure to enter your actual paths!*
 1. Run Python, import the neurodtw package and load our ERPs
+
 	`import neurodtw`	
 	`from scipy.io import loadmat`
 	`data = loadmat("your/path/to/example_series_N2pcP3s")`
