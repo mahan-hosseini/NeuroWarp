@@ -57,7 +57,7 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 7.	`units = "\muV"`
 8.	`sampling_rate = 500`
 	- The number of data points per second in Hertz
-9.	`filepath = cd' (or wherever else you have saved our data)
+9.	`filepath = cd` (or wherever else you have saved our data)
 10.	`permutations = 10000`
 	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
 11.	`dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, filepath, permutations)`
