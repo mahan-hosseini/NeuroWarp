@@ -1,6 +1,6 @@
 # Python NeuroDTW
 
-Python NeuroDTW is provided as a module that can be installed via PyPi. It consists of two functions that can be called after importing neurodtw: timeseries_correlation and latency_difference -  these are the general-purpose scripts enable the DTW analyses presented in *Transient Attention Gates Access Consciousness: Coupling N2pc and P3 Latencies using Dynamic Time Warping*.
+Python NeuroDTW is provided as a package that can be installed via PyPi. It consists of two functions that can be called after importing neurodtw: timeseries_correlation and latency_difference -  these are the general-purpose scripts enable the DTW analyses presented in *Transient Attention Gates Access Consciousness: Coupling N2pc and P3 Latencies using Dynamic Time Warping*.
 
 ## Installation
 
@@ -29,9 +29,9 @@ Perform a DTW based bootstrap analysis to assess the temporal correlation betwee
 ### Running timeseries_correlation using our ERPs
 *Make sure to enter your actual paths!*
 1. Run Python, import the neurodtw package and load our ERPs
-	`import neurodtw	
-	from scipy.io import loadmat
-	data = loadmat("your/path/to/example_series_N2pcP3s")`
+	`import neurodtw`	
+	`from scipy.io import loadmat`
+	`data = loadmat("your/path/to/example_series_N2pcP3s")`
 
 **Configure Variables**
 2. series_1 = data["P3_Correct"]
