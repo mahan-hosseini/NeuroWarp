@@ -1,7 +1,8 @@
 # Matlab NeuroDTW
 
-Matlab NeuroDTW consists of two main scripts, dtw_timeseries_correlation.m and dtw_latency_difference.m - these are the general-purpose scripts enable the DTW analyses presented in *Transient Attention Gates Access Consciousness: Coupling N2pc and P3 Latencies using Dynamic Time Warping*.
-The scripts used to replicate our analyses and figures as presented in our paper can be found in the *replicating_paper* folder.
+Matlab NeuroDTW consists of two main scripts, **dtw_timeseries_correlation.m & dtw_latency_difference.m** - these scripts enable DTW analyses of the kind presented in *Transient Attention Gates Access Consciousness: Coupling N2pc and P3 Latencies using Dynamic Time Warping*. We additionally provide the Event Related Potentials presented in our paper in the **example_series_N2pcP3s.mat** file for users to familiarise themselves with our scripts before using them with their own data. Please see below for  further instructions.
+
+The scripts and data used to generate our analyses and figures as presented in our paper can be found in the **replicating_paper** folder.  
 
 ## Dependencies
 *Matlab NeuroDTW requires the following toolboxes to be installed and available in your Matlab path:*
