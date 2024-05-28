@@ -55,12 +55,9 @@ if size(series_1, 2) ~= size(series_2, 2)
 end
 
 % then check if names were strings, have to be chars
-if isstring(name_1)
-    name_1 = char(name_1);
-end
-if isstring(name_2)
-    name_2 = char(name_2);
-end
+name_1 = char(name_1);
+name_2 = char(name_2);
+savepath = char(savepath);
 
 % prepare path for plots
 if savepath(end) ~= '/'

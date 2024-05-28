@@ -18,7 +18,7 @@
 % 7) sampling_rate
 %    => What was the sampling rate of your signal? In Hertz
 %    => Used to compute the latency difference in milliseconds
-% 8) filepath
+% 8) savepath
 %    => Path with files
 % 9) permutations
 %    => Number of permutations to adopt in statistical testing 
@@ -34,7 +34,7 @@
 %    If you would like to assess only a specific interval of your time 
 %    series, use indexing before calling this function.
 
-function dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, filepath, permutations)
+function dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, savepath, permutations)
 %%       LATENCY DIFFERENCES WITH DYNAMIC TIME WARPING (IN MS)
 
 %%                      SOME PREPARATION
@@ -51,11 +51,11 @@ end
 if isstring(name_reference)
     name_reference = char(name_reference);
 end
-if isstring(filepath)
-    filepath = char(filepath);
+if isstring(savepath)
+    savepath = char(savepath);
 end
-if (filepath(end) ~= '\') | (filepath(end) ~= '/')
-    filepath = strcat(filepath, '/');
+if (savepath(end) ~= '\') | (savepath(end) ~= '/')
+    savepath = strcat(savepath, '/');
 end
 
 if ~ (strcmp(analysis_design, 'between') | strcmp(analysis_design, 'within'))
@@ -156,7 +156,7 @@ end
 h1.FontSize = 25;
 [~, h2] = suplabel([units ' (z-scored)'], 'y', [.12 .08 .84 .84]);
 h2.FontSize = 25;
-saveas(gcf, [filepath 'Alignment.jpg'])
+saveas(gcf, [savepath 'Alignment.jpg'])
 hold off
 
 % Latency in MS is distribution of point-wise distances (distance = ix - iy) / (sampling rate (Hz) / 1000)
@@ -168,7 +168,7 @@ lat_in_ms = latency / (sampling_rate / 1000);
 fprintf([' \n *** Latency Difference: ' num2str(lat_in_ms) 'ms! *** \n'])
 
 % Plot warping paths compared to diagonal
-plotWP(i_query_x, i_reference_y, plot_avg_query, plot_avg_reference, name_query, name_reference, units, lat_in_ms, filepath);
+plotWP(i_query_x, i_reference_y, plot_avg_query, plot_avg_reference, name_query, name_reference, units, lat_in_ms, savepath);
 
 %%             PERMUTATION TEST ON AREA MEASURE (have this for median(distance), i.e. lat_in_ms measure, too)
 %       GET OBSERVED AREA
@@ -272,7 +272,7 @@ ax.YTickLabels = yticklabels_str;
 ax.YLabel.String = 'Proportion';
 ax.XLabel.String = 'DTW - Area';
 title({['Latency diff.: ' num2str(lat_in_ms) 'ms - ', plot_p]}, 'FontSize', 20)
-saveas(gcf, [filepath 'Permutation Distribution.jpg'])
+saveas(gcf, [savepath 'Permutation Distribution.jpg'])
 hold off
  
 
@@ -295,16 +295,16 @@ ax.YTickLabels = yticklabels_str;
 ax.YLabel.String = 'Proportion';
 ax.XLabel.String = 'DTW - Area (absolute)';
 title({['Absolute Areas - Latency diff.: ' num2str(lat_in_ms) 'ms - ', plot_p]}, 'FontSize', 20)
-saveas(gcf, [filepath 'Permutation Distribution (absolutes).jpg'])
+saveas(gcf, [savepath 'Permutation Distribution (absolutes).jpg'])
 hold off
 
 %   Save permutation-variables to file
-save([filepath 'DTW Permutation Test - ' analysis_design ' subjects.mat'], 'area', 'p', 'thresh1', 'thresh2', 'perm_x', 'perm_y', 'permdist_areas')
+save([savepath 'DTW Permutation Test - ' analysis_design ' subjects.mat'], 'area', 'p', 'thresh1', 'thresh2', 'perm_x', 'perm_y', 'permdist_areas')
 clear area p thresh
 end
 
 %% PLOT WARPING PATH (with non-standardized GAs on Axes)!
-function plotWP(i_query_x, i_reference_y, plot_avg_query, plot_avg_reference, name_query, name_reference, units, lat_in_ms, filepath)
+function plotWP(i_query_x, i_reference_y, plot_avg_query, plot_avg_reference, name_query, name_reference, units, lat_in_ms, savepath)
 %% Plot warping path compared to diagonal
 figure;
 set(gcf,'Position', [ 0        0        1280         907]);
@@ -372,6 +372,6 @@ h3.FontSize = h2.FontSize;
 hold off
 
 % Save it
-saveas(gcf, [filepath 'WarpPath.jpg'])
+saveas(gcf, [savepath 'WarpPath.jpg'])
  
 end

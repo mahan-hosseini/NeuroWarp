@@ -22,13 +22,13 @@ Perform a **DTW based bootstrap analysis** to assess the **temporal correlation 
 - We provide the ERPs of correct and intrusion trials for users to explore this function
 
 ### Running dtw_timeseries_correlation.m using our ERPs:
-*Enter the following into MATLAB’s command window making sure your current directory (cd) corresponds to where you have saved our data*
+*Enter the following into MATLAB’s command window. Note that example_series_N2pcP3.mat has to be stored in your current directory (see step #1)*
 1.	`load("example_series_N2pcP3s.mat")`
 2.	`series_1 = P3_Correct`
 3.	`series_2 = N2pc_Correct`
 4.	`name_1 = “P3”`
 5.	`name_2 = “N2pc”`
-6.	`savepath = cd` (or wherever else you have saved our data)
+6.	`savepath = cd` (or wherever else you would like to store results to)
 7.	`num_boots = 10000`
 	- The number of bootstrap samples that you want to implement
 8.	`outlier = 0`
@@ -52,7 +52,7 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 - We provide the ERPs of correct and intrusion trials for users to explore this function
 
 ### Running dtw_latency_difference.m using our ERPs:
-*Enter the following into MATLAB’s command window making sure your current directory (cd) corresponds to where you have saved our data*
+*Enter the following into MATLAB’s command window. Note that example_series_N2pcP3.mat has to be stored in your current directory (see step #1)*
 1.	`load("example_series_N2pcP3s.mat")`
 2.	`analysis_design = “within”`
 3.	`query = N2pc_Intrusion`
@@ -62,12 +62,10 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 7.	`units = "\muV"`
 8.	`sampling_rate = 500`
 	- The number of data points per second in Hertz
-9.	`filepath = cd` (or wherever else you have saved our data)
+9.	`savepath = cd` (or wherever else you would like to store results to)
 10.	`permutations = 10000`
 	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
-11.	`dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, filepath, permutations)`
+11.	`dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, savepath, permutations)`
 
 ## Tests
-Matlab NeuroDTW was tested with Matlab 2020b & 2023b on Windows. 
-
-On a M1 Macbook the run_DTW local function caused crashes for my machine. If you have any insight on this or are able to run it on (e.g. a non-ARM) another mac please let me know (m.hosseini@fz-juelich.de). The rest worked as expected.
+Matlab NeuroDTW was tested with Matlab 2020b & 2023b on Windows and 2023b on Mac OS.
