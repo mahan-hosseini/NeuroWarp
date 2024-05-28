@@ -21,7 +21,9 @@ For more detail on virtual environments & pip [click here](https://packaging.pyt
 
 
 ## DTW Temporal Correlation - neurodtw.timeseries_correlation()
-Perform a DTW based bootstrap analysis to assess the temporal correlation between two time series (Figure 5 of our paper).
+Perform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper).
+
+### Important Notes
 - Time series must be 2D matrices
 	- I.e., data points (e.g. time) x subjects (i.e., replications)
 - We provide the ERPs of correct and intrusion trials for users to explore this function
@@ -48,6 +50,8 @@ Perform a DTW based bootstrap analysis to assess the temporal correlation betwee
 Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).
 
 *Figures 3 & 4 of our paper show a two conditions analysis*
+
+### Important Notes
 - Reference and query time series must be 2D matrices
 	- I.e., data points (e.g., time) x subjects (i.e., replications)
 	- Time series have to be of equal sizes
