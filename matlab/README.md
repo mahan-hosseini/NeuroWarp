@@ -17,7 +17,7 @@ The scripts and data used to generate our analyses and figures as presented in o
 Perform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper).
 
 ### Important Notes
-- Time series must be 2D matrices
+- Time series must be **2D matrices**
 	- I.e., data points (e.g. time) x subjects (i.e., replications)
 - We provide the ERPs of correct and intrusion trials for users to explore this function
 
@@ -45,10 +45,10 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 *Figures 3 & 4 of our paper show a between-conditions (within-subjects) analysis*
 
 ### Important Notes
-- Reference and query time series must be 2D matrices
+- Reference and query time series must be **2D matrices**
 	- I.e., data points (e.g., time) x subjects (i.e., replications)
-	- Time series have to be of equal sizes
-- analysis_design determines whether you want to assess a within- or between-subjects latency effect (can only take “within” or “between” as input)
+	- Time series have to be of **equal sizes**
+- **analysis_design** determines whether you want to assess a within- or between-subjects latency effect (can only take “within” or “between” as input)
 - We provide the ERPs of correct and intrusion trials for users to explore this function
 
 ### Running dtw_latency_difference.m using our ERPs:

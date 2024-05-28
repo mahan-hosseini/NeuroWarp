@@ -24,7 +24,7 @@ For more detail on virtual environments & pip [click here](https://packaging.pyt
 Perform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper).
 
 ### Important Notes
-- Time series must be 2D matrices
+- Time series must be **2D matrices**
 	- I.e., data points (e.g. time) x subjects (i.e., replications)
 - We provide the ERPs of correct and intrusion trials for users to explore this function
 
@@ -52,10 +52,10 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 *Figures 3 & 4 of our paper show a two conditions analysis*
 
 ### Important Notes
-- Reference and query time series must be 2D matrices
+- Reference and query time series must be **2D matrices**
 	- I.e., data points (e.g., time) x subjects (i.e., replications)
-	- Time series have to be of equal sizes
-- analysis_design determines whether you want to assess a within- or between-subjects latency effect (can only take “within” or “between” as input)
+	- Time series have to be of **equal sizes**
+- **analysis_design** determines whether you want to assess a within- or between-subjects latency effect (can only take “within” or “between” as input)
 - We provide the ERPs of correct and intrusion trials for users to explore this function
 
 ### Running timeseries_correlation using our ERPs
@@ -72,10 +72,10 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 	- The units that your signals are measured in (in our case micro volts)
 10. `sampling_rate = 500`
 	- The number of data points per second in Hertz
-11. `filepath = "where/to/store/results/to"`
+11. `savepath = "where/to/store/results/to"`
 12. `permutations = 10000`
 	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
-13. `neurodtw.latency_difference(analysis_design, query, reference, name_query, name_reference,units, sampling_rate, filepath, permutations)`
+13. `neurodtw.latency_difference(analysis_design, query, reference, name_query, name_reference,units, sampling_rate, savepath, permutations)`
 
 ## Dependencies
 *Python NeuroDTW requires the following toolboxes which are automatically installed via `pip install neurodtw`*
