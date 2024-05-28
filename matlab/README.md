@@ -38,9 +38,9 @@ Perform a **DTW based bootstrap analysis** to assess the **temporal correlation 
 *Note that the figure will look slightly different to that of our paper due to different x/y limits. See the replicate_figures folder if you want to replicate our figure as it was printed.*
 
 ## DTW Latency Difference - dtw_latency_difference.m
-Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).
+Assess the **latency difference** between **two conditions** (i.e., within-subjects effect) or between **two groups** (i.e., across-subjects effect) of any signal of interest (in milliseconds).
 
-*Figures 3 & 4 of our paper show a two conditions analysis*
+*Figures 3 & 4 of our paper show a between-conditions (within-subjects) analysis*
 - Reference and query time series must be 2D matrices
 	- I.e., data points (e.g., time) x subjects (i.e., replications)
 	- Time series have to be of equal sizes

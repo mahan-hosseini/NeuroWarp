@@ -33,7 +33,7 @@
 
 ## Figure 6 - DTW Bootstrap N2pc & P3 Marginal Distribution Comparison Plots
 1. `filepath = "enter/the/path/to/Marginal Distributions.mat/"` (end with a "/"!)
-- Marginal Distributions.mat is created by correlateP3andN2pc function!
+    - Marginal Distributions.mat is created by correlateP3andN2pc function!
 2. `compareMarginals(filepath, 0)`
 
 ## Figure 7 - DTW Simulations with (Human) Noise
