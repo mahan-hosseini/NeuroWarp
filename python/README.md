@@ -34,9 +34,9 @@ Perform a **DTW based bootstrap analysis** to assess the **temporal correlation 
 2. `from scipy.io import loadmat`
 3. `data = loadmat("your/path/to/example_series_N2pcP3s")`
 4. `series_1 = data["P3_Correct"]`
-5. `series_2 = data["P3_Intrusion"]`
-6. `name_1 = "Correct"`
-7. `name_2 = "Intrusion"`
+5. `series_2 = data["N2pc_Correct"]`
+6. `name_1 = "P3"`
+7. `name_2 = "N2pc"`
 8. `savepath = "where/to/store/results/to"`
 9. `num_boots = 10000`
 	- The number of bootstrap samples that you want to implement
@@ -45,6 +45,8 @@ Perform a **DTW based bootstrap analysis** to assess the **temporal correlation 
 11. `try_to_fix_ylims = 1`
 	- Attempt to standardise y-limits of marginals
 12. `neurodtw.timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)`
+
+*Note that the figure will look slightly different to that of our paper due to different x/y limits. See the replicate_figures folder if you want to replicate our figure as it was printed.*
 
 ## DTW Latency Difference - neurodtw.latency_difference()
 Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).

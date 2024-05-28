@@ -86,6 +86,12 @@ def latency_difference(
     name_query = str(name_query)
     name_reference = str(name_reference)
     savepath = str(savepath)
+    plotpath = os.path.join(savepath, "Plots/")
+    varpath = os.path.join(savepath, "Variables/")
+    if not os.path.exists(plotpath):
+        os.makedirs(plotpath)
+    if not os.path.exists(varpath):
+        os.makedirs(varpath)
 
     # Sanity check on analysis_design value
     if analysis_design not in ["between", "within"]:
@@ -147,7 +153,7 @@ def latency_difference(
 
     # plot standardised & aligned time series
     plot_standardised_and_aligned_series(
-        z_avg_query, z_avg_reference, warped_query, warped_reference, units, savepath
+        z_avg_query, z_avg_reference, warped_query, warped_reference, units, plotpath
     )
 
     # Latency in MS is distribution of point-wise distances:
@@ -168,7 +174,7 @@ def latency_difference(
         name_reference,
         units,
         lat_in_ms,
-        savepath,
+        plotpath,
     )
 
     # %% PERMUTATION TEST ON AREA MEASURE
@@ -280,16 +286,17 @@ def latency_difference(
         fontsize=13,
     )
     f.savefig(
-        os.path.join(savepath, "Permutation Distribution.png"),
+        os.path.join(plotpath, "Permutation Distribution.png"),
         bbox_inches="tight",
         dpi=300,
     )
     f.savefig(
-        os.path.join(savepath, "Permutation Distribution.svg"),
+        os.path.join(plotpath, "Permutation Distribution.svg"),
         bbox_inches="tight",
         dpi=300,
     )
-    plt.show()
+    plt.show(block=False)
+    plt.pause(0.001)
 
     # Plot figure of observed area-size & its permutation distribution
     f, ax = plt.subplots()
@@ -309,16 +316,17 @@ def latency_difference(
         fontsize=13,
     )
     f.savefig(
-        os.path.join(savepath, "Permutation Distribution (absolutes).png"),
+        os.path.join(plotpath, "Permutation Distribution (absolutes).png"),
         bbox_inches="tight",
         dpi=300,
     )
     f.savefig(
-        os.path.join(savepath, "Permutation Distribution (absolutes).svg"),
+        os.path.join(plotpath, "Permutation Distribution (absolutes).svg"),
         bbox_inches="tight",
         dpi=300,
     )
-    plt.show()
+    plt.show(block=False)
+    plt.pause(0.001)
 
     # store variables to a pickle file
     vars_to_save = {
@@ -331,20 +339,21 @@ def latency_difference(
         "permdist_areas": permdist_areas,
     }
     picklepath = os.path.join(
-        savepath, ("DTW Permutation Test - %s subjects.pkl" % analysis_design)
+        varpath, ("DTW Permutation Test - %s subjects.pkl" % analysis_design)
     )
     with open(picklepath, "wb") as file:
         pickle.dump(vars_to_save, file)
     print(
         "\n\n****************************"
         + "\nDTW Latency Analysis is done"
-        + "\n****************************\n\nFigures & vars were saved to savepath."
+        + "\n****************************\n\nResults were saved to:\n"
+        + savepath
     )
 
 
 # %% Local functions - plotting
 def plot_standardised_and_aligned_series(
-    z_avg_query, z_avg_reference, warped_query, warped_reference, units, savepath
+    z_avg_query, z_avg_reference, warped_query, warped_reference, units, plotpath
 ):
     """Plots a figure of original/standardised and aligned time series"""
     f, ax = plt.subplots(4, 1)
@@ -368,9 +377,10 @@ def plot_standardised_and_aligned_series(
     ax[-1].set_xlabel("Datapoints", fontsize=SUPLABEL_FONTSIZE)
     f.suptitle("Alignment", y=0.99, fontsize=TITLE_FONTSIZE)
     f.supylabel(units + " (z-scored)", x=0.01, fontsize=SUPLABEL_FONTSIZE)
-    f.savefig(os.path.join(savepath, "Alignment.png"), bbox_inches="tight", dpi=300)
-    f.savefig(os.path.join(savepath, "Alignment.svg"), bbox_inches="tight", dpi=300)
-    plt.show()
+    f.savefig(os.path.join(plotpath, "Alignment.png"), bbox_inches="tight", dpi=300)
+    f.savefig(os.path.join(plotpath, "Alignment.svg"), bbox_inches="tight", dpi=300)
+    plt.show(block=False)  # otherwise stopped further code if python via terminal
+    plt.pause(0.001)
 
 
 def plotWP(
@@ -382,7 +392,7 @@ def plotWP(
     name_reference,
     units,
     lat_in_ms,
-    savepath,
+    plotpath,
 ):
     """Plot the warping path, the main diagonal and both original time series"""
     f, ax_global = plt.subplots()
@@ -465,6 +475,7 @@ def plotWP(
     )
     ax_2.set_xlabel("Datapoints", fontsize=11)
     ax_3.set_ylabel("Datapoints", fontsize=11)
-    f.savefig(os.path.join(savepath, "WarpPath.png"), bbox_inches="tight", dpi=300)
-    f.savefig(os.path.join(savepath, "WarpPath.svg"), bbox_inches="tight", dpi=300)
-    plt.show()
+    f.savefig(os.path.join(plotpath, "WarpPath.png"), bbox_inches="tight", dpi=300)
+    f.savefig(os.path.join(plotpath, "WarpPath.svg"), bbox_inches="tight", dpi=300)
+    plt.show(block=False)
+    plt.pause(0.001)

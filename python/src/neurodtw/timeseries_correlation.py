@@ -355,7 +355,8 @@ def timeseries_correlation(
     picklepath = os.path.join(varpath, (marginals_filename + ".pkl"))
     with open(picklepath, "wb") as file:
         pickle.dump(vars_to_save, file)
-    plt.show()
+    plt.show(block=False)  # otherwise stopped further code if python via terminal
+    plt.pause(0.001)
 
 
 # %% Local functions
