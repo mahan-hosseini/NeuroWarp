@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "neurodtw"
+name = "neurowarp"
 version = "0.0.1"
 authors = [
   { name="Mahan Hosseini", email="m.hosseini@fz-juelich.de" },
@@ -24,5 +24,5 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/mahan-hosseini/NeuroDTW/"
-Issues = "https://github.com/mahan-hosseini/NeuroDTW/Issues"
+Homepage = "https://github.com/mahan-hosseini/NeuroWarp/"
+Issues = "https://github.com/mahan-hosseini/NeuroWarp/Issues"

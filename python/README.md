@@ -1,26 +1,26 @@
-# Python NeuroDTW
+# Python NeuroWarp
 
-Python NeuroDTW is provided as a package that can be installed via PyPi. It consists of two functions that can be called after importing neurodtw: timeseries_correlation and latency_difference -  these are the general-purpose scripts enable the DTW analyses presented in *Transient Attention Gates Access Consciousness: Coupling N2pc and P3 Latencies using Dynamic Time Warping*.
+Python NeuroWarp is provided as a package that can be installed via PyPi. It consists of two functions that can be called after importing neurowarp: timeseries_correlation and latency_difference -  these are the general-purpose scripts enable the DTW analyses presented in *Transient Attention Gates Access Consciousness: Coupling N2pc and P3 Latencies using Dynamic Time Warping*.
 
 ## Installation
 
 We recommend that you create a new virtual environment for our module via:
 1. Open a terminal / cmd.exe window, navigate (via `cd`) to the directory you want to create the environment and enter:
-`python -m venv neurodtw_env`
-2. Activate the neurodtw_env via:
+`python -m venv neurowarp_env`
+2. Activate the neurowarp_env via:
 
-	**Windows:** `path\to\neurodtw_env\Scripts\activate`
+	**Windows:** `path\to\neurowarp_env\Scripts\activate`
 
-	**MacOS:** `source neurodtw_env/bin/activate`
+	**MacOS:** `source neurowarp_env/bin/activate`
 
-3. Install neurodtw via pip (enter while neurodtw_env is active):
-`pip install neurodtw`
+3. Install neurowarp via pip (enter while neurowarp_env is active):
+`pip install neurowarp`
 4. The functions can be used as explained below after importing the module
 
 For more detail on virtual environments & pip [click here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
 
 
-## DTW Temporal Correlation - neurodtw.timeseries_correlation()
+## DTW Temporal Correlation - neurowarp.timeseries_correlation()
 Perform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper).
 
 ### Important Notes
@@ -30,7 +30,7 @@ Perform a **DTW based bootstrap analysis** to assess the **temporal correlation 
 
 ### Running timeseries_correlation using our ERPs
 *Enter the following into Python and make sure to enter your actual paths!*
-1. `import neurodtw`	
+1. `import neurowarp`	
 2. `from scipy.io import loadmat`
 3. `data = loadmat("your/path/to/example_series_N2pcP3s")`
 4. `series_1 = data["P3_Correct"]`
@@ -44,11 +44,11 @@ Perform a **DTW based bootstrap analysis** to assess the **temporal correlation 
 	- Exclude outliers if their DTW area is +-5 standard deviations from the mean
 11. `try_to_fix_ylims = 1`
 	- Attempt to standardise y-limits of marginals
-12. `neurodtw.timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)`
+12. `neurowarp.timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)`
 
 *Note that the figure will look slightly different to that of our paper due to different x/y limits. See the replicate_figures folder if you want to replicate our figure as it was printed.*
 
-## DTW Latency Difference - neurodtw.latency_difference()
+## DTW Latency Difference - neurowarp.latency_difference()
 Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).
 
 *Figures 3 & 4 of our paper show a two conditions analysis*
@@ -62,7 +62,7 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 
 ### Running timeseries_correlation using our ERPs
 *Enter the following into Python and make sure to enter your actual paths!*
-1. `import neurodtw`	
+1. `import neurowarp`	
 2. `from scipy.io import loadmat`
 3. `data = loadmat("your/path/to/example_series_N2pcP3s")`
 4. `analysis_design = "within"`
@@ -77,14 +77,14 @@ Assess the **latency difference** between **two conditions** (i.e., within-subje
 11. `savepath = "where/to/store/results/to"`
 12. `permutations = 10000`
 	- The number of permutations you would like to implement in statistical testing (we recommend >=10000)
-13. `neurodtw.latency_difference(analysis_design, query, reference, name_query, name_reference,units, sampling_rate, savepath, permutations)`
+13. `neurowarp.latency_difference(analysis_design, query, reference, name_query, name_reference,units, sampling_rate, savepath, permutations)`
 
 ## Dependencies
-*Python NeuroDTW requires the following toolboxes which are automatically installed via `pip install neurodtw`*
+*Python NeuroWarp requires the following toolboxes which are automatically installed via `pip install neurowarp`*
 - Numpy
 - Matplotlib
 - Tslearn
 - Scipy
 
 ## Tests
-Python NeuroDTW was tested with Python 3.10.9.
+Python NeuroWarp was tested with Python 3.10.9.
