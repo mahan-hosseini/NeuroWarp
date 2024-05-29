@@ -11,7 +11,6 @@ The scripts and data used to generate our analyses and figures as presented in o
 - [Hline & vline](https://de.mathworks.com/matlabcentral/fileexchange/1039-hline-and-vline )
 - [RGB](https://de.mathworks.com/matlabcentral/fileexchange/46872-intuitive-rgb-color-values-from-xkcd)
 - [Suplabel](https://de.mathworks.com/matlabcentral/fileexchange/7772-suplabel )
-- [nhist](https://de.mathworks.com/matlabcentral/fileexchange/27388-plot-and-compare-histograms-pretty-by-default)
 
 ## DTW Temporal Correlation - neurowarp_timeseries_correlation.m
 Perform a **DTW based bootstrap analysis** to assess the **temporal correlation between two time series** (Figure 5 of our paper).

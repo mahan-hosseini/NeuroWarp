@@ -1,6 +1,8 @@
 # Matlab NeuroWarp - Replicating our Paper
 
 ## Dependencies
+**Note the additional dependency *nhist* when replicating our paper figures!**
+
 *Matlab NeuroWarp requires the following toolboxes to be installed and available in your Matlab path:*
 - Matlab’s Statistics & Machine Learning Toolbox
 - Matlab’s Signal Processing Toolbox
