@@ -34,7 +34,7 @@
 %    If you would like to assess only a specific interval of your time 
 %    series, use indexing before calling this function.
 
-function dtw_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, savepath, permutations)
+function neurowarp_latency_difference(analysis_design, query, reference, name_query, name_reference, units, sampling_rate, savepath, permutations)
 %%       LATENCY DIFFERENCES WITH DYNAMIC TIME WARPING (IN MS)
 
 %%                      SOME PREPARATION

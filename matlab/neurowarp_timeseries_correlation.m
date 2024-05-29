@@ -45,7 +45,7 @@
 %    harder to compare) or you want to implement different values, change 
 %    the lines that use xlimits & ylimits (see line 180)
 
-function dtw_timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)
+function neurowarp_timeseries_correlation(series_1, series_2, name_1, name_2, savepath, num_boots, outlier, try_to_fix_ylims)
 %%                          PREPARATION
 
 % first check if user adhered to equal sample size across time series
