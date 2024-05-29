@@ -49,7 +49,7 @@ Perform a **DTW based bootstrap analysis** to assess the **temporal correlation 
 *Note that the figure will look slightly different to that of our paper due to different x/y limits. See the replicate_figures folder if you want to replicate our figure as it was printed.*
 
 ## DTW Latency Difference - neurowarp.latency_difference()
-Assess the **latency difference** between **two conditions** (i.e., within-subject effect) or between **two groups** (i.e., across-subject) effect of any signal of interest (in milliseconds).
+Assess the **latency difference** between **two conditions** (i.e., within-subjects effect) or between **two groups** (i.e., across-subjects effect) of any signal of interest (in milliseconds).
 
 *Figures 3 & 4 of our paper show a two conditions analysis*
 
