@@ -35,6 +35,6 @@ authors:
 identifiers:
   - type: doi
     value: 10.1523/JNEUROSCI.1798-23.2024
-    description: Journal of Neuroscience Paper
+    description: Journal Paper
 repository-code: 'https://github.com/mahan-hosseini/NeuroWarp'
 license: GPL-3.0
