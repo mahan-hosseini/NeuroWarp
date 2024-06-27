@@ -1,0 +1,40 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: NeuroWarp
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Mahan
+    family-names: Hosseini
+    email: m.hosseini@fz-juelich.de
+    affiliation: >-
+      Forschungszentrum Jülich, Institute of Neuroscience
+      and Medicine (INM-3)
+    orcid: 'https://orcid.org/0000-0003-2889-6227'
+  - given-names: Alon
+    family-names: Zivony
+    affiliation: University of Sheffield
+    orcid: 'https://orcid.org/0000-0001-7166-9439'
+  - given-names: Martin
+    family-names: Eimer
+    orcid: 'https://orcid.org/0000-0002-4338-1056'
+    affiliation: 'Birkbeck College, University of London'
+  - given-names: Brad
+    family-names: Wyble
+    affiliation: 'Psychology Department, Penn State University'
+    orcid: 'https://orcid.org/0000-0002-9984-3037'
+  - given-names: Howard
+    family-names: Bowman
+    affiliation: >-
+      School of Psychology and School of Computer Science,
+      University of Birmingham
+identifiers:
+  - type: doi
+    value: 10.1523/JNEUROSCI.1798-23.2024
+    description: Journal of Neuroscience Paper
+repository-code: 'https://github.com/mahan-hosseini/NeuroWarp'
+license: GPL-3.0
